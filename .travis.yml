@@ -1,11 +1,13 @@
 language: python
 python:
-  - "3.4"
+  - "3.6"
 cache: pip
 install:
   - pip install -r requirements.txt
   - pip install pytest-cov
   - pip install coveralls
+env:
+  - export FLASK_CONFIG="production"
 script:
   - pytest --cov=Api/
 after_success:
